@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://mdn.github.io/beginner-html-site-scripted/ -->
+<html><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>My test page</title>
+    <link href="./My test page_files/css" rel="stylesheet" type="text/css">
+    <link href="./My test page_files/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Mozilla is cool, mohMMED matar</h1>
+    <img src="./My test page_files/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
+
+    <p>At Mozilla, we’re a global community of</p>
+
+    
+
+    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+
+    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> to learn even more about the values and principles that guide the pursuit of our mission.</p>
+  <button>Change user</button>
+  <script src="./My test page_files/main.js.تنزيل"></script>
+  
+
+</body></html>
